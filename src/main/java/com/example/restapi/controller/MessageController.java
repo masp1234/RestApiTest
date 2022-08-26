@@ -27,16 +27,11 @@ public class MessageController {
         // builder er slet ikke nødvendigt, men kun for at huske at den findes
         GsonBuilder builder = new GsonBuilder();
         builder.setPrettyPrinting();
-
         Gson gson = builder.create();
 
-        System.out.println(messages);
-
         String jsonToBeSent = gson.toJson(messages);
-        System.out.println(jsonToBeSent);
 
         return jsonToBeSent;
-
     }
 
     @RequestMapping("/get-message/{id}")
@@ -50,8 +45,8 @@ public class MessageController {
             Gson json = new Gson();
 
             result = json.toJson(message);
-
         }
         return result;
     }
 }
+
